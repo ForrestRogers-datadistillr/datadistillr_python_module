@@ -10,8 +10,8 @@ class datadistillr:
         self.projects_page = "https://devapp.datadistillr.io/api/projects"
 
 
-    def login(self, username, password):
-        user_info = {"username": str(username), "password": str(password)}
+    def login(self, email, password):
+        user_info = {"email": str(username), "password": str(password)}
         requests.post(url = self.login_page, params = user_info, cookies = jar)
 
     def logout(self):
