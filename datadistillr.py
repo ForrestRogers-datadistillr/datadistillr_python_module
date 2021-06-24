@@ -1,4 +1,6 @@
 import requests
+import http.cookiejar
+jar = http.cookiejar.CookieJar()
 
 class datadistillr:
 
@@ -9,14 +11,15 @@ class datadistillr:
 
 
     def login(self, username, password):
-        user_info = {"email": str(username), "password": str(password)}
-        requests.post(url = self.login_page, params = user_info)
+        user_info = {"username": str(username), "password": str(password)}
+        requests.post(url = self.login_page, params = user_info, cookies = jar)
 
     def logout(self):
-        requests.get(url = self.logout_page)
+        requests.get(url = self.logout_page, cookies = jar)
 
     def get_projects(self):
-        requests.get(url = self.projects_page)
+        requests.get(url = self.projects_page, cookies = jar)
+
 
 
 
