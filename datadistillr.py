@@ -11,7 +11,11 @@ class datadistillr:
 
 
     def login(self, email, password):
-        user_info = {"email": str(username), "password": str(password)}
+        user_info = {
+            "email": str(email),
+            "password": str(password)
+        }
+        
         requests.post(url = self.login_page, params = user_info, cookies = jar)
 
     def logout(self):
