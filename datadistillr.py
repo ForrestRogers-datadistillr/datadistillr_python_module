@@ -6,8 +6,6 @@ jar = http.cookiejar.CookieJar()
 class datadistillr:
 
     def __init__(self):
-        self.session = requests.session()
-
         self.login_page = "https://devapp.datadistillr.io/api/login"
         self.logout_page = "https://devapp.datadistillr.io/api/logout"
         self.projects_page = "https://devapp.datadistillr.io/api/projects"
